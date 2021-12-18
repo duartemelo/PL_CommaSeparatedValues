@@ -37,7 +37,7 @@ class Reader:
 
     # Função que serve para reconhecer o campo Currency do ficheiro de texto
     def t_currency_STR(self, t):
-        r'"([A-Z][a-z]*,?\s?)*"|(([A-Z]|[a-z])[^,]+)'
+        r'"([A-Z]?[a-z]*,?\s?)*"|(([A-Z]|[a-z])[^,]+)'
         t.type = "CURRENCY"
         t.lexer.begin("language")
         return t
@@ -80,9 +80,12 @@ class Reader:
     def read(self):
         my_dict = {}
         self.lexer.input(slurp(self.filename))
+
+        headers = [member for member in self.tokens if member not in ("COMMENTARY", "NEWLINE")]
+
         i=0
         for token in iter(self.lexer.token, None):
-            if i<4:
+            if i < len(headers):
                 my_dict[token.type] = []
                 i+=1
             else:
