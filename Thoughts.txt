@@ -7,3 +7,5 @@ Cada linha está distinta por um \n:
 	t_NEWLINE = r"\n"
 Não há \t neste documento
 Incluir no t_ignore --> #
+
+test
