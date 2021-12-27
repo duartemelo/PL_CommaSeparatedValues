@@ -6,7 +6,7 @@ Implementação de um programa que consiga ler dados de um ficheiro .csv, separa
 É possível encontrar o relatório do projeto no repositório.
 
 ## To-Do
-- Leitura de dados genéricos, qualquer número de colunas é lido, não apenas as referidas no enunciado
+- Fix que possibilite colunas com nomes iguais (ainda não é possível pois um dicionário não permite keys repetidas)
 
 ## Participantes
 * [Duarte Melo](https://github.com/duartemelo)
